@@ -1,7 +1,10 @@
-<p class="book-title">
+<h4 class="book-title">
   <%= @book.title %>
-</p>
+</h4>
 
-<p class="book-body">
+<h4 class="book-body">
   <%= @book.body %>
-</p>
+</h4>
+
+<%= link_to "Edit", edit_book_path(@book) %>
+<%= link_to "destroy", book_path(@book), method: :delete %>
