@@ -1,16 +1,13 @@
-<header>
-  <h1 class="heading">
-    <%= link_to "Books", book_path %>
-  </h1>
-</header>
+<% if flash[:notice] %>
+<p id="notice">
+  <%= flash[:notice] %>
+</p>
+<% end %>
 
+<h4>Title:<%= @book.title %></h4>
+<h4>Body:<%= @book.body %></h4>
 
-<h4 class="book-title"></h4>
-<p>><%= @book.title %></p>
+<%= link_to "Edit", edit_book_path(@book) %>
+|
+<%= link_to "Back", :back %>
 
-
-<h4 class="book-body"></h4>
-<p><%= @book.body %></p>
-
-<%= link_to "Edit", edit_book_path(@book.id) %>
-<%= link_to "destroy", destroy_book_path(@book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
